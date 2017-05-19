@@ -1,0 +1,27 @@
+<?php $this->partial('shared/header'); ?>
+
+<form method="post" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <div class="pull-right">
+                    <a href="<?= $this->router->to('adminSettingRobotsDisable') ?>" class="btn btn-danger">Disable</a>
+                    <button class="btn btn-primary">Save</button>
+                </div>
+                <h3><?= $title ?></h3>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <?php if($success): ?>
+            <div class="alert alert-success"><strong>Success!</strong> The new robot.txt content saved.</div>
+            <?php endif; ?>
+            <?= $this->form->field('text') ?>
+        </div>
+    </div>
+</form>
+
+<style>#field-text{height:400px;}</style>
+<?php $this->partial('shared/footer'); ?>

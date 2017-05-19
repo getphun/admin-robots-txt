@@ -1,0 +1,26 @@
+<?php $this->partial('shared/header'); ?>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <div class="pull-right">
+                    <a href="<?= $this->router->to('adminSettingRobotsEnable') ?>" class="btn btn-primary">Enable</a>
+                </div>
+                <h3><?= $title ?></h3>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-warning">
+                <strong>Whoops!</strong>
+                Your site robots.txt is disabled. In most case, you don't want to disable it as search engine may need it for some purpose.
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<?php $this->partial('shared/footer'); ?>
