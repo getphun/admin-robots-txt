@@ -69,11 +69,16 @@ class RobotController extends \AdminController
             $f  = fopen($robots_file, 'w');
             
             $tx = 'User-agent: *' . $nl;
-            $tx.= 'Disallow: /admin' . $nl;
-            $tx.= 'Disallow: /comp' . $nl;
+            $tx.= 'Disallow: /admin/' . $nl;
+            $tx.= 'Disallow: /comp/' . $nl;
             $tx.= 'Disallow: /plugins/feedback.php' . $nl;
             $tx.= $nl;
-            $tx.= 'Sitemap: /sitemap.xml';
+            $tx.= 'User-agent: Alexabot' . $nl;
+            $tx.= 'Disallow: /post/amp/' . $nl;
+            if(module_exists('robot')){
+                $tx.= $nl;
+                $tx.= 'Sitemap: ' . $this->router->to('robotSitemap');
+            }
             
             fwrite($f, $tx);
             fclose($f);
